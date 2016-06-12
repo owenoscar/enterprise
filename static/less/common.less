@@ -1,0 +1,809 @@
+/*Less 文件 需js编译 开发时使用  项目部署前编译成css文件*/
+//定义声明
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+}
+
+//单行截取限制
+.whiteSpace {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//input内部阴影去除
+.input-inset() {
+  -webkit-box-shadow: inset 0 0px 0px #FFFFFF;
+  -moz-box-shadow: inset 0 0px 0px #FFFFFF;
+  box-shadow: inset 0 0px 0px #FFFFFF
+}
+
+.text-red {
+  color: #f70302;
+}
+
+@base-color: #ffffff;
+//网站border基色
+@base-border: 1px solid #e6e6e6;
+//border去除
+@border-none: 0 none;
+//网站主要用到的蓝色
+@base-blue: #41b0ff;
+//网站主要用到的橙色
+@base-warning: #f39801;
+//网站主要用到的灰色字体
+@base-grey: #a4a4a4;
+@base-light-grey: #cccccc;
+
+//css reset
+body {
+  font: 14px "微软雅黑", Helvetica, Arial, sans-serif;
+  background: #f8fcfd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section, fieldset, article, aside, figure, figcaption, header, footer, nav {
+  display: block;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li, ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+}
+
+.bg-white {
+  background: white !important;
+}
+
+.bdnone {
+  border: 0 none !important;
+}
+
+button {
+  border: 0 none;
+}
+
+.pr {
+  position: relative;
+}
+
+label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.main-btn {
+  padding: 12px 0;
+  color: white !important;
+  text-align: center;
+  font-size: 16px;
+  .rounded-corners(3px);
+}
+
+.main-blue-btn {
+  background: @base-blue;
+}
+
+.main-warning-btn {
+  background: @base-warning;
+}
+
+.main-grey-btn {
+  background: #bebebe;
+}
+
+.content-small {
+  padding: 5px;
+}
+
+.content {
+  padding: 10px;
+}
+
+.content-large {
+  padding: 15px;
+}
+
+.more-info {
+  display: inline-block;
+  background: url(../images/icon/more-info.png) no-repeat no-repeat;
+  -webkit-background-size: 36px 36px;
+  background-size: 36px 36px;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  top: 3px;
+  right: 5px;
+}
+
+.switchBtn {
+  width: 48px;
+  background: #1cd91b;
+  height: 24px;
+  .rounded-corners(100px);
+  display: inline-block;
+  top: 10px;
+  right: 5%;
+  position: relative;
+  float: right;
+  i {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    background: white;
+    .rounded-corners(100px);
+
+  }
+}
+
+.switchBtn.off {
+  background: #cdcdcd;
+}
+
+//正文样式
+
+//header，footer
+.main-header {
+  background: #41b0ff;
+
+  h4 {
+    color: white;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+
+.goBackBtn {
+  text-align: center;
+  i {
+    background: url(../images/icon/return-icon.png) no-repeat center;
+    background-size: 36px 36px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    top: 3px;
+
+  }
+}
+
+//publishActivity.html
+.top-block, .middle-block {
+  background: white;
+  border-bottom: @base-border;
+  margin-bottom: 10px;
+}
+
+.middle-block {
+  border-top: @base-border;
+}
+
+.activityInfo {
+  input, textarea {
+    background: #f9f9f9;
+    width: 96%;
+    padding: 8px 2%;
+  }
+
+  textarea {
+    height: 80px;
+  }
+}
+
+.uploadImgBox {
+  a {
+    display: block;
+    width: 100%;
+  }
+  .span3:nth-child(4n+1) {
+    margin-left: 0;
+  }
+  .span3 {
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+.formList {
+  width: 90%;
+  margin: 0 auto;
+  li {
+    border-bottom: @base-border;
+  }
+  li:last-child {
+    border: @border-none;
+  }
+  label, em {
+    line-height: 40px;
+  }
+  label {
+    color: @base-grey;
+  }
+  em {
+    font-weight: bold;
+  }
+  .span6,.span8 {
+    text-align: right;
+  }
+}
+
+.activityList {
+  input[type="text"] {
+    border: 0 none;
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    .input-inset();
+    width: 100%;
+
+  }
+  .personList{
+    width: 100%;
+    margin: 5px 0;
+    li{
+      padding: 1px 5px;
+      float: left;
+      border: @border-none;
+      background: #f9f9f9;
+      border: @base-border;
+      color: #000;
+      margin: 0 3px 3px 0;
+      font-size: 12px;
+      a{
+        display: inline-block;;padding: 3px; font-size: 16px;
+        color: #000;
+      }
+    }
+  }
+
+}
+
+.switchComment {
+  line-height: 40px;
+  text-indent: 5%;
+  font-weight: bold;
+}
+
+//myPublish.html
+
+.publishList {
+  li {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: @base-border;
+    margin-bottom: 10px;
+    i {
+      img {
+        width: 100%;
+      }
+    }
+
+    a {
+      color: #000;
+      div.span10 {
+        position: relative;
+        label {
+          .whiteSpace;
+          padding: 5px 0;
+          margin-bottom: 5px;
+          font-weight: bold;
+          width: 80%;
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+          color: @base-grey;
+          .whiteSpace;
+          position: relative;
+          width: 70%;
+        }
+
+        i {
+          font-style: normal;
+          font-size: 12px;
+          position: absolute;
+          bottom: 0;
+          right: 5px;
+          color: @base-grey;
+          z-index: 100;
+        }
+        .listRemoveBtn {
+          display: inline-block;
+          background: url(../images/icon/remove-icon.png) no-repeat;
+          -webkit-background-size: 36px 36px;
+          background-size: 36px 36px;
+          width: 36px;
+          height: 36px;
+          position: absolute;
+          top: -5px;
+          right: 5px;
+        }
+      }
+
+    }
+  }
+
+}
+
+//policeInfo
+.police-info-head {
+  margin: 10px 0;
+
+  h4 {
+    width: 100%;
+    margin: 0 auto 10px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .row-fluid {
+    border-bottom: @base-border;
+
+    label, em {
+      line-height: 20px;
+    }
+    label {
+      color: @base-light-grey;
+    }
+    em {
+      color: #4f8ab2;
+    }
+  }
+  img {
+    width: 100%;
+  }
+
+}
+
+.police-info-content {
+  p {
+    margin: 10px 0;
+    line-height: 20px;
+    text-indent: 2em;
+  }
+  embed {
+    width: 100%;
+  }
+}
+
+.read-result {
+  label, a {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 12px;
+    float: left;
+  }
+  label {
+    line-height: 34px;
+    color: @base-light-grey;
+  }
+  a {
+    background: url(../images/icon/good-icon.png) no-repeat;
+    width: 28px;
+    height: 28px;
+    -webkit-background-size: 28px 28px;
+    background-size: 28px 28px;
+    margin-left: 20px;
+    color: @base-light-grey;
+    i {
+      display: block;
+      text-indent: 24px;
+      line-height: 32px;
+      font-style: normal;
+    }
+
+  }
+}
+
+//policeService
+.police-service-top {
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+.police-service-content {
+  a {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-bottom: @base-border;
+    padding: 10% 0;
+    img {
+      width: 40%;
+    }
+    h4 {
+      padding: 10px 0;
+      color: #585858;
+      font-size: 16px;
+    }
+  }
+  a.left {
+    background: url(../images/separate.png) right repeat-y;
+  }
+}
+
+//newActivity
+.countdown-line {
+  background: #ededed;
+  line-height: 50px;
+  height: 50px;
+  border-bottom: @base-border;
+  label {
+    line-height: 30px;
+  }
+  span {
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+    margin-right: 3px;
+
+    .rounded-corners(3px);
+    em{
+      display: inline-block;
+      padding:2px 3px;
+      background: #313131;
+      color: #fff;
+      line-height: 20px;
+      .rounded-corners(3px);
+      margin: 0 2px;
+
+    }
+
+  }
+}
+
+.basic-activity-info {
+  > div {
+    h4 {
+      font-weight: bold;
+      line-height: 20px;
+      height: 40px;
+      .overflow;
+      font-size: 15px;
+    }
+    h4.span4 {
+      .text-red;
+      .whiteSpace;
+
+    }
+
+  }
+}
+
+.subject {
+  border-bottom: @base-border;
+}
+
+.activityDetail {
+  > div {
+    h4 {
+      font-weight: bold;
+      line-height: 20px;
+      font-size: 15px;
+    }
+  }
+  > p {
+    line-height: 22px;
+    text-indent: 2em;
+    margin-bottom: 10px;
+  }
+  > img {
+    width: 100%;
+  }
+  .activityArrangementList {
+    padding: 10px 0;
+    margin-top: 10px;
+    border-top: @base-border;
+    div.row-fluid {
+      .span4, p {
+        line-height: 30px;
+      }
+      .span4 {
+        font-size: 15px;
+        .text-red;
+        font-weight: bold;
+      }
+      p {
+        color: #656565;
+      }
+    }
+  }
+}
+
+.enrollment, .comment-title {
+  text-indent: 10px;
+  padding: 10px 0;
+  border-bottom: @base-border;
+  font-weight: bold;
+  background: white;
+}
+
+.enrollPersonList {
+  margin-bottom: 10px;
+  a {
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+    }
+    label {
+      text-align: center;
+      display: block;
+      padding: 3px 0;
+      color: #000;
+    }
+  }
+  a.span3:nth-child(4n+1) {
+    margin-left: 0;
+  }
+}
+
+.comment-list {
+  background: #efefef;
+  margin-bottom: 50px;
+  .comment {
+    background: white;
+    margin-bottom: 10px;
+    .comment-detail {
+      h4 {
+        font-size: 15px;
+        color: #ff8302;
+        margin-bottom: 5px;
+      }
+      em {
+        display: block;
+        font-size: 12px;
+        color: #818181;
+        margin-bottom: 10px;
+      }
+      p{font-size: 14px;line-height: 20px; text-indent: 1em;margin-bottom: 10px;}
+      div.img-list{
+        a.span4:nth-child(3n+1){
+          margin-left: 0;
+        }
+      }
+    }
+    .comment-result{
+      margin-top: 10px;
+      padding-top: 5px;
+      border-top: @base-border;
+      a{
+        -webkit-background-size: 32px 32px !important;
+        background-size: 32px 32px !important;
+        color:#828282;
+        text-indent: 28px;
+        line-height: 32px;
+        .whiteSpace;
+        font-size: 11px;
+      }
+      a.iLove{
+        background: url(../images/icon/love-icon-default.png) no-repeat ;
+
+      }
+      a.iFocus{
+        background: url(../images/icon/focus-icon-default.png) no-repeat ;
+
+      }
+      a.iComment{
+        background: url(../images/icon/comment-icon-default.png) no-repeat ;
+
+      }
+      a.iRemove{
+        background: url(../images/icon/remove-icon-default.png) no-repeat center;
+
+      }
+    }
+  }
+
+}
+
+.fixed-bottom-comment{
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background:#fafafa;
+  bottom: 0;
+  left: 0;
+
+  input{width: 85%;margin-left: 5%; line-height: 30px; height: 22px;}
+  a.submit-btn{
+    display: inline-block;
+    background: #f4f4f4;
+    color: #2663b6;
+    text-align: center;
+    .rounded-corners(3px);
+    line-height: 30px;
+    border:1px solid #bdc3c3;
+    z-index: 9999;
+  }
+
+}
+
+//pliceClub
+.club-bg{
+  img{
+    width: 100%;
+
+  }
+}
+.club-title{
+  padding-bottom: 5px;
+  border-bottom: @base-border;
+  h4{
+    font-size: 15px;
+    padding: 5px 0;
+  }
+  em{
+    display: inline-block; line-height: 20px; font-size: 12px;color: @base-grey;
+    padding: 0 5px;
+  }
+}
+
+.default-classify{
+  margin-top: 10px;
+  label.span3:nth-child(4n+1){
+    margin-left: 0;
+  }
+  label.span3{
+    text-align: center;padding: 5px 0;
+    margin-bottom: 10px;
+    border: 1px solid @base-blue;
+    background: white;
+    color: @base-blue;
+    .rounded-corners(3px);
+  }
+  label.span3.active{
+    background:@base-blue;
+    color: white;
+  }
+}
+
+
+
+.club-tab{
+  a{
+    float: left;
+    text-align: center;
+    font-size: 15px;
+    border-top: 2px solid #eeeeee;
+    border-bottom: 2px solid @base-blue;
+    padding: 5px 0;
+    color: #000;
+    box-shadow:inset 2px 0px 0px #eeeeee;
+
+  }
+ .new,.hot{
+   width: 33%;
+ }
+  .recommended{
+    width: 34%;
+  }
+}
+
+.club-comment-info{
+  border:@border-none;
+  background: #efefef;
+  .comment-list{
+    .comment{
+      .rounded-corners(3px);
+    }
+  }
+}
+
+//ActivityEnroll
+.activityenroll {
+  textarea {
+    background: #f9f9f9;
+    width: 96%;
+    padding: 8px 2%;
+  }
+  textarea {
+    height:150px;
+  }
+}
+//ImportantNotice
+.noticelist{
+  li{
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: @base-border;
+    margin-bottom:4px;
+    i{
+      img {
+        width:100%;
+
+      }
+    }
+    a {
+      color: #000;
+      div.span11 {
+        p {
+          .whiteSpace;
+          padding: 2px 0;
+          margin-bottom: 3px;
+          font-size: 15px;
+          width: 100%;
+        }
+
+        i {
+          display:inline-block;
+          float:right;
+          font-style: normal;
+          font-size: 12px;
+          color: @base-grey;
+        }
+        em {
+          display:inline-block;
+          float:left;
+          font-size: 12px;
+          color: @base-grey;
+        }
+      }
+
+    }
+  }
+  .notice-grey{
+    color: @base-grey;
+  }
+  .list-more{
+    display:block;
+    text-align:center;
+    padding:10px 0 10px 0;
+    color:#000;
+  }
+}
+
+
+//兼容iphone4,5手机
+@media only screen and (min-device-width: 320px) and(max-device-width: 340px) {
+  .publishList {
+    a {
+      color: #000;
+      div.span10 {
+        position: relative;
+        label {
+          font-size: 14px !important;
+          padding: 0 !important;
+        }
+      }
+    }
+
+  }
+
+}

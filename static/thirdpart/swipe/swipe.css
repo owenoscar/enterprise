@@ -1,0 +1,14 @@
+body{ margin:0; padding:0}
+.addWrap{ position:relative; width:100%;background:#fff;margin:0; padding:0;}
+.addWrap .swipe{overflow: hidden;visibility: hidden;position:relative;}
+.addWrap .swipe-wrap{overflow:hidden;position:relative;}
+.addWrap .swipe-wrap > div {float: left;width: 100%;position:relative;}
+.addWrap .swipe-wrap a{display: block;}
+#mySwipe .swipe-wrap a img{ width: 100%;}
+
+#position{ position: absolute; left: 0; text-align: center;  display: inline-block; background:transparent; opacity: 0.8; filter: alpha(opacity=50); width:100%;bottom: 10px; }
+#position ul{display: inline-block;}
+#position ul li{width:6px;height:6px;margin:0 2px;display:inline-block;-webkit-border-radius:5px;border-radius:5px;background-color:#b3e5fd;}
+#position ul li.cur{background-color:#ffffff; width: 7px;height: 7px;}
+.img-responsive { display: block; max-width: 100%;  height: auto; width: 100%;}
+

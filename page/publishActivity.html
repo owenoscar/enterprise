@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- cdn为云端架库-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet/less" type="text/css" href="../static/less/common.less"/>
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/less.js/2.5.0/less.min.js"></script>
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <!---->
+
+
+</head>
+<body>
+<header class="row-fluid main-header">
+    <a href="javascript:;" class="span2 goBackBtn"><i></i></a>
+    <h4 class="span8">发布活动</h4>
+</header>
+<form>
+    <section class="top-block">
+        <div class="content activityInfo">
+            <input type="text" placeholder="请输入活动主题（30字以内）"/>
+            <textarea  id="" placeholder="请输入活动内容..."></textarea>
+            <div class="uploadImgBox row-fluid">
+                <a href="javascript:;" class="span3" id="addUploadImgBtn">
+                     <img src="../static/images/icon/add-img.png" alt=""/>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="middle-block">
+           <ul class="formList timeList">
+               <li class="row-fluid">
+                   <em class="span5">报名截至时间</em>
+                   <label class="span6">2013-07-09  18:00</label>
+               </li>
+               <li class="row-fluid">
+                   <em class="span5">报名开始时间</em>
+                   <label class="span6">2013-07-09  18:00</label>
+               </li>
+               <li class="row-fluid">
+                   <em class="span5">报名结束时间</em>
+                   <label class="span6">2013-07-09  18:00</label>
+               </li>
+           </ul>
+    </section>
+
+    <section class="middle-block">
+        <label class="switchComment">
+            开始评论功能
+            <a href="javascript:;" class="switchBtn">
+                <i></i>
+            </a>
+        </label>
+    </section>
+
+    <section class="middle-block">
+        <ul class="formList activityList">
+            <li class="row-fluid">
+                <em class="span3">活动地点</em>
+                <label class="span8">
+                    <input type="text" placeholder="请输入活动地址"/>
+                </label>
+            </li>
+            <li class="row-fluid">
+                <em class="span3">活动费用</em>
+                <label class="span8">不需要费用</label>
+                <span class="span1">
+                    <i class="more-info"></i>
+                </span>
+            </li>
+            <li class="row-fluid">
+                <em class="span3">活动对象</em>
+                <label class="span8">
+                    所有人
+                    <ul class="personList clearfix">
+                        <li>竺哲 <a href="javascript:;" class="personRemove">x</a></li>
+                        <li>张小凡<a href="javascript:;" class="personRemove">x</a></li>
+                        <li>张小类<a href="javascript:;" class="personRemove">x</a></li>
+                        <li>王伟活<a href="javascript:;" class="personRemove">x</a></li>
+                        <li>王伟<a href="javascript:;" class="personRemove">x</a></li>
+                        <li>刘无所<a href="javascript:;" class="personRemove">x</a></li>
+                    </ul>
+
+
+                </label>
+                <span class="span1">
+                    <i class="more-info"></i>
+                </span>
+            </li>
+            <li class="row-fluid">
+                <em class="span7">数量限制 <span>(0为不限制)</span></em>
+                <label class="span4 text-right">
+                    <input type="text" placeholder="0"/>
+                </label>
+            </li>
+        </ul>
+    </section>
+    <div class="content-large">
+        <div class="row-fluid">
+            <a href="javascript:;" class="span6 main-btn main-blue-btn">保存为草稿</a>
+            <a href="javascript:;" class="span6 main-btn main-warning-btn">立即提交</a>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+//    zepto
+    $(function(){
+        var defaultHeight,defaultWidth;
+        defaultHeight=$(".uploadImgBox a").height();
+        defaultWidth=$(".uploadImgBox a").width();
+
+//     模拟iphone打开关闭 switchOnOff
+       $("body").on("click","a.switchBtn",switchOnOff);
+
+       $("body").on("click","a.personRemove",personRemove);
+
+    });
+
+    function personRemove(){
+        var o=$(this);
+        o.closest("li").remove();
+    }
+
+    function switchOnOff(){
+        var o=$(this);
+        if(o.hasClass("off")){
+            o.find("i").animate({
+                left:'1px'
+            },100);
+            o.removeClass("off");
+        }else{
+            o.find("i").animate({
+                left:'24px'
+            },100);
+            o.addClass("off");
+        }
+    }
+
+    //重置上传后图片的size
+    function resetImgSize(defaultHeight,defaultWidth){
+        $(".uploadImgBox a").css({
+            height:defaultHeight,
+            width:defaultWidth
+        })
+    }
+</script>
+
+
+</body>
+</html>
